@@ -9,18 +9,18 @@ script:
   - docker run hotwing78/react-test npm test -- --coverage
 
 after_success:
-  - docker build -t hotwing78/multi-client ./client
-  - docker build -t hotwing78/multi-nginx ./nginx
-  - docker build -t hotwing78/multi-server ./server
-  - docker build -t hotwing78/multi-worker ./worker
+  - docker build -t Hotwing78/multi-client ./client
+  - docker build -t Hotwing78/multi-nginx ./nginx
+  - docker build -t Hotwing78/multi-server ./server
+  - docker build -t Hotwing78/multi-worker ./worker
   # Log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
-  - docker push hotwing78/multi-client
-  - docker push hotwing78/multi-nginx
-  - docker push hotwing78/multi-server
-  - docker push hotwing78/multi-worker
-
+  - docker push Hotwing78/multi-client
+  - docker push Hotwing78/multi-nginx
+  - docker push Hotwing78/multi-server
+  - docker push Hotwing78/multi-worker
+#changeg
 deploy:
   provider: elasticbeanstalk
   region: us-west-1
